@@ -1,38 +1,234 @@
-.App {
-  text-align: center;
+#root{
+  background: #0e0e0e;
+padding: 0px;
+margin: 0px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+button,
+input,
+select {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+nav {
+  position: fixed;
+  z-index: 1111;
+  width: 100%;
+  background-color: transparent;
+backdrop-filter: blur(0px);
+padding: 10px 80px;
+transition: all 0.3s ease-in-out;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.scrollerset{
+padding: 7px 30px;
+backdrop-filter: blur(10px);
+background-color: #ffffff2f;
+
+}
+
+
+nav .logo {
+  height: 50px;
+  width: auto;
+}
+
+nav .logo img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.search-wrapper-field {
+  height: 50px;
+  width: 460px;
+  position: relative;
+}
+
+.search-wrapper-field input {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  background-color: #ffffff2c;
+  backdrop-filter: blur(10px);
+  border-radius: 100px;
+  border: 2px solid white;
+  padding: 5px 10px;
+  outline: none;
+  color: white;
+
+}
+
+.search-wrapper-field input::placeholder {
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.search-wrapper-field button {
+  height: 40px;
+  width: 40px;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+
+.search-wrapper-field button .icon {
+  font-size: 30px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.banner {
+  height: 100vh;
+  width: 100%;
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.banner img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
+
+.banner::before {
+  position: absolute;
+  background-image: linear-gradient(91deg, #000000ee, #000000d2, transparent);
+  content: '';
+  height: 100%;
+  width: 100%;
+}
+
+
+.banner .content {
+  position: absolute;
+  z-index: 11;
+  width: 47%;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 100px;
+  color: white;
+  background-color: transparent;
+}
+
+
+.banner .content h1 {
+  font-size: 80px;
+  font-weight: 400;
+  background-color: transparent;
+}
+
+.banner .content p {
+  background-color: transparent;
+  color: #e4e4e4;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.banner-btn {
+  border-radius: 100px;
+  background-color: white;
+  border: none;
+  height: 40px;
+  width: 150px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.banner-btn-outline {
+  border-radius: 100px;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  border: none;
+  background: #ffffff2c;
+  color: white;
+  font-size: 14px;
+  height: 40px;
+  width: 150px;
+  letter-spacing: 1px;
+}
+
+.heading{
+  color: white;
+font-size: 60px;
+font-weight: 700;
+}
+
+.t-white{
+  color: white;
+}
+
+.section-content{
+  font-size: 17px;
+  color: white;
+  font-weight: 300;
+}
+
+.movie-card{
+ width: 100%;
+ height: 190px;
+ position: relative; 
+ overflow: hidden;
+ border-radius: 5px;
+}
+
+.movie-card img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.movie-card .content{
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+  width: max-content;
+  z-index: 11;
+}
+
+.movie-card .overlay{
+  position: absolute;
+  top: 0%;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  background-image:linear-gradient(84deg,black,  #000000da, #ffffff4a, transparent);
+}
+
+.movie-card .content h6{
+letter-spacing: 1px;
+font-weight: 300;
+width: 90%;
+font-size: 30px;
+}
+
+.movie-card .content span{
+  font-weight: 200;
+  font-size: 12px;
+}
+
+.pagination-controls button{
+height: 40px;
+width: 40px;
+border-radius: 100px;
+border: none;
+background-color: white;
+color: black;
+}
+
+
