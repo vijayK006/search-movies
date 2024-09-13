@@ -2,9 +2,11 @@ import React, { useContext, useState, useEffect } from 'react';
 import { ContextProvider } from '../Context/ContextWrapper';
 import { Col, Row, Spinner } from 'react-bootstrap';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Movies = () => {
-    const { movieDetails } = useContext(ContextProvider);
+    const { movieDetails, storeInput } = useContext(ContextProvider);
+
     const [loading, setLoading] = useState(true); // Loading state
     const [error, setError] = useState(false);
 
@@ -49,19 +51,22 @@ const Movies = () => {
 
                 <div className="text-center my-5">
                     <Spinner animation="border" variant="primary" role="status">
-                        <span className="sr-only">Loading...</span>
+                        <span className="sr-only"></span>
                     </Spinner>
                 </div>
             ) : error ? (
 
                 <div className="text-center my-5">
-                    <h3 className='t-white'>Search Your Movies</h3>
+                    <h3 className='t-white'>There are no movies called <span style={{color:"red"}}>{storeInput}</span>  </h3>
                 </div>
             ) : (
                 <>
                     <Row>
+                    
+                    <h3 className='t-white mt-5'>Search Result : <span style={{color:"red", textAlign:'left'}}>{storeInput}</span>  </h3>
                         {currentItems.map((listItems) => (
-                            <Col md={4} className="my-4" key={listItems.imdbID}>
+                            <Link to={`/movie-details/${listItems.imdbID}`}>
+                        <Col md={4} className="my-4" key={listItems.imdbID}>
                                 <div className="movie-card shadow">
                                     <img src={listItems.Poster} alt={listItems.Title} title={listItems.Title} />
                                     <div className="content">
@@ -71,6 +76,8 @@ const Movies = () => {
                                     <div className="overlay" />
                                 </div>
                             </Col>
+                    </Link>
+                            
                         ))}
                     </Row>
 
